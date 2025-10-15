@@ -84,9 +84,8 @@ body {
 }
 
 /* cards */
-.card{
-    border: none !important;
-    margin-bottom: 2rem;
+.card {
+  border: none !important;
 }
 .card-img-top{
     border-radius: 1rem !important;
@@ -127,4 +126,10 @@ body {
      background-color: #fe424d !important;
     border: none !important;
     width: 6rem !important;
+}
+.review-card{
+    border: #222 !important;
+}
+.card.review-card {
+  border: 1px solid black !important;  /* This will override the global "border: none !important" */
 }
