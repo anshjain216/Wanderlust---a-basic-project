@@ -11,6 +11,13 @@ app.engine('ejs', ejsMate);
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, "/public")));
+var session = require('express-session')
+app.use(session({
+    secret:"mysupersecretstring",
+    resave:false,
+    saveUninitialized:true
+}));
+
 const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
 main().then(() => {
