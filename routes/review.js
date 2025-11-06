@@ -21,12 +21,14 @@ router.post("/",reviewsc,asyncWrap( async(req,res)=>{
     list.reviews.push(newreview);
     await newreview.save();
     await list.save();
+    req.flash("success","New review added successfully");
     res.redirect(`/listings/${list._id}/show`)
 }));
 router.delete("/:reviewid",asyncWrap(async (req,res)=>{
     let {id,reviewid} = req.params;
     await listing.findByIdAndUpdate(id,{$pull: {reviews:reviewid}});
     await review.findByIdAndDelete(reviewid);
+    req.flash("success","Review deleted");
     res.redirect(`/listings/${id}/show`)
 }))
 

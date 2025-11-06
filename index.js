@@ -12,11 +12,34 @@ const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, "/public")));
 var session = require('express-session')
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/User.js");
 app.use(session({
     secret:"mysupersecretstring",
     resave:false,
-    saveUninitialized:true
+    saveUninitialized:true,
+    cookie:{
+        expires: Date.now() + 7*24*60*60*1000,
+        maxAge:7*24*60*60*1000,
+        httpOnly:true
+    }
 }));
+const flash=require("connect-flash");
+app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+app.use((req,res,next)=>{
+    res.locals.successmsg = req.flash("success");
+     res.locals.errormsg = req.flash("error");
+    next();
+})
 
 const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
@@ -35,6 +58,14 @@ app.use("/listings", listings);
 app.use("/listings/:id/reviews", reviews);
 app.get("/", (req, res) => {
     res.send("hi i am root");
+})
+app.get("/demouser", async(req,res)=>{
+    let fakeuser = new User({
+        email:"student@gmail.com",
+        username:"student12345"
+    })
+    let registerduser = await User.register(fakeuser,"helloworld");
+    res.send(registerduser);
 })
 app.listen(8080, () => {
     console.log("server listning to port 8080");
