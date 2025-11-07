@@ -43,6 +43,7 @@ app.use((req,res,next)=>{
 
 const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
+const Users = require("./routes/User.js");
 main().then(() => {
     console.log("connection succesfull");
 }).catch((err) => {
@@ -56,6 +57,7 @@ async function main() {
 
 app.use("/listings", listings);
 app.use("/listings/:id/reviews", reviews);
+app.use("/", Users);
 app.get("/", (req, res) => {
     res.send("hi i am root");
 })
