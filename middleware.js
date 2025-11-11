@@ -1,5 +1,7 @@
 const listing = require("./models/listing.js");
 const review = require("./models/review.js");
+const expressError = require("./utili/expressError.js");
+const { listingSchema,reviewSchema} = require("./schema.js");
 
 module.exports.isLoggedIn= (req,res,next)=>{
     if(!req.isAuthenticated()){
@@ -33,4 +35,24 @@ module.exports.isAuthor=async (req,res,next)=>{
         return res.redirect(`/listings/${id}/show`);
     }
     next();
+}
+
+module.exports.validatesc=(req, res, next) => {
+    let { error } = listingSchema.validate(req.body);
+    if (error) {
+        let errmsg = error.details.map((el) => el.message).join(",");
+        throw new expressError(404, errmsg);
+    } else {
+        next();
+    }
+}
+
+module.exports.reviewsc= (req, res, next) => {
+    let { error } = reviewSchema.validate(req.body);
+    if (error) {
+        let errmsg = error.details.map((el) => el.message).join(",");
+        throw new expressError(404, errmsg);
+    } else {
+        next();
+    }
 }
