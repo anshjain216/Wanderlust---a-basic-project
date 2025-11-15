@@ -59,9 +59,6 @@ async function main() {
 app.use("/listings", listings);
 app.use("/listings/:id/reviews", reviews);
 app.use("/", Users);
-app.get("/", (req, res) => {
-    res.send("hi i am root");
-})
 app.listen(8080, () => {
     console.log("server listning to port 8080");
 })

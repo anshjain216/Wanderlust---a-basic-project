@@ -9,6 +9,7 @@ const sampleListings = [
     price: 1500,
     location: "Malibu",
     country: "United States",
+    categories: ["Trending", "Beach", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-118.7798, 34.0259]
@@ -24,6 +25,7 @@ const sampleListings = [
     price: 1200,
     location: "New York City",
     country: "United States",
+    categories: ["Iconic Cities", "Apartments"],
     geometry: {
       type: "Point",
       coordinates: [-74.0060, 40.7128]
@@ -39,6 +41,7 @@ const sampleListings = [
     price: 1000,
     location: "Aspen",
     country: "United States",
+    categories: ["Mountains", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-106.8175, 39.1911]
@@ -54,6 +57,7 @@ const sampleListings = [
     price: 2500,
     location: "Florence",
     country: "Italy",
+    categories: ["Iconic Cities", "Homes", "Castles"],
     geometry: {
       type: "Point",
       coordinates: [11.2558, 43.7696]
@@ -69,6 +73,7 @@ const sampleListings = [
     price: 800,
     location: "Portland",
     country: "United States",
+    categories: ["Camping", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-122.6784, 45.5152]
@@ -84,6 +89,7 @@ const sampleListings = [
     price: 2000,
     location: "Cancun",
     country: "Mexico",
+    categories: ["Beach", "Pools", "Apartments"],
     geometry: {
       type: "Point",
       coordinates: [-86.8515, 21.1619]
@@ -99,6 +105,7 @@ const sampleListings = [
     price: 900,
     location: "Lake Tahoe",
     country: "United States",
+    categories: ["Mountains", "Camping", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-119.9772, 38.9399]
@@ -114,6 +121,7 @@ const sampleListings = [
     price: 3500,
     location: "Los Angeles",
     country: "United States",
+    categories: ["Iconic Cities", "Apartments", "Trending"],
     geometry: {
       type: "Point",
       coordinates: [-118.2437, 34.0522]
@@ -129,6 +137,7 @@ const sampleListings = [
     price: 3000,
     location: "Verbier",
     country: "Switzerland",
+    categories: ["Mountains", "Pools", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [7.2285, 46.0961]
@@ -144,6 +153,7 @@ const sampleListings = [
     price: 4000,
     location: "Serengeti National Park",
     country: "Tanzania",
+    categories: ["Camping", "Farms", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [34.8333, -2.3333]
@@ -159,6 +169,7 @@ const sampleListings = [
     price: 1100,
     location: "Ubud",
     country: "Indonesia",
+    categories: ["Homes", "Pools"],
     geometry: {
       type: "Point",
       coordinates: [115.2625, -8.5069]
@@ -174,6 +185,7 @@ const sampleListings = [
     price: 950,
     location: "Nashville",
     country: "United States",
+    categories: ["Farms", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-86.7816, 36.1627]
@@ -189,6 +201,7 @@ const sampleListings = [
     price: 1300,
     location: "Joshua Tree",
     country: "United States",
+    categories: ["Camping", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-116.3131, 34.1347]
@@ -204,6 +217,7 @@ const sampleListings = [
     price: 2200,
     location: "Paris",
     country: "France",
+    categories: ["Iconic Cities", "Apartments", "Trending"],
     geometry: {
       type: "Point",
       coordinates: [2.3522, 48.8566]
@@ -219,6 +233,7 @@ const sampleListings = [
     price: 1400,
     location: "Amazon Rainforest",
     country: "Brazil",
+    categories: ["Camping", "Farms", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-60.0217, -3.1190] // near Manaus
@@ -234,6 +249,7 @@ const sampleListings = [
     price: 2700,
     location: "Santorini",
     country: "Greece",
+    categories: ["Beach", "Pools", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [25.4615, 36.3932]
@@ -249,6 +265,7 @@ const sampleListings = [
     price: 1800,
     location: "Reykjavik",
     country: "Iceland",
+    categories: ["Arctic", "Mountains", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-21.9426, 64.1466]
@@ -264,6 +281,7 @@ const sampleListings = [
     price: 2100,
     location: "Kyoto",
     country: "Japan",
+    categories: ["Iconic Cities", "Rooms", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [135.7681, 35.0116]
@@ -279,6 +297,7 @@ const sampleListings = [
     price: 5000,
     location: "Dubai",
     country: "United Arab Emirates",
+    categories: ["Iconic Cities", "Pools", "Apartments"],
     geometry: {
       type: "Point",
       coordinates: [55.2708, 25.2048]
@@ -294,6 +313,7 @@ const sampleListings = [
     price: 2400,
     location: "London",
     country: "United Kingdom",
+    categories: ["Iconic Cities", "Apartments"],
     geometry: {
       type: "Point",
       coordinates: [-0.1278, 51.5074]
@@ -309,6 +329,7 @@ const sampleListings = [
     price: 2600,
     location: "Sydney",
     country: "Australia",
+    categories: ["Beach", "Apartments"],
     geometry: {
       type: "Point",
       coordinates: [151.2093, -33.8688]
@@ -324,6 +345,7 @@ const sampleListings = [
     price: 1700,
     location: "Marrakech",
     country: "Morocco",
+    categories: ["Iconic Cities", "Castles", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-7.9811, 31.6295]
@@ -339,6 +361,7 @@ const sampleListings = [
     price: 1600,
     location: "Banff",
     country: "Canada",
+    categories: ["Mountains", "Arctic", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [-115.5708, 51.1784]
@@ -354,6 +377,7 @@ const sampleListings = [
     price: 1900,
     location: "Barcelona",
     country: "Spain",
+    categories: ["Iconic Cities", "Apartments", "Beach"],
     geometry: {
       type: "Point",
       coordinates: [2.1734, 41.3851]
@@ -369,6 +393,7 @@ const sampleListings = [
     price: 2800,
     location: "Cape Town",
     country: "South Africa",
+    categories: ["Beach", "Homes", "Pools"],
     geometry: {
       type: "Point",
       coordinates: [18.4241, -33.9249]
@@ -384,6 +409,7 @@ const sampleListings = [
     price: 2000,
     location: "Amsterdam",
     country: "Netherlands",
+    categories: ["Iconic Cities", "Homes"],
     geometry: {
       type: "Point",
       coordinates: [4.9041, 52.3676]
@@ -399,6 +425,7 @@ const sampleListings = [
     price: 2300,
     location: "Vienna",
     country: "Austria",
+    categories: ["Iconic Cities", "Apartments", "Castles"],
     geometry: {
       type: "Point",
       coordinates: [16.3738, 48.2082]
@@ -414,6 +441,7 @@ const sampleListings = [
     price: 3200,
     location: "Singapore",
     country: "Singapore",
+    categories: ["Iconic Cities", "Apartments", "Pools", "Trending"],
     geometry: {
       type: "Point",
       coordinates: [103.8198, 1.3521]

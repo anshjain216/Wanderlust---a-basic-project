@@ -19,6 +19,8 @@ router.route("/")
 
 router.get("/new",isLoggedIn, listingController.newListing);
 
+router.get("/category",asyncWrap(listingController.categoryListing));
+
 router.route("/:id")
 .put(isLoggedIn,isOwner,upload.single('listing[image]'), validatesc, asyncWrap(listingController.updateListing))
 .delete(isLoggedIn,isOwner, asyncWrap(listingController.deleteListing));
@@ -26,5 +28,7 @@ router.route("/:id")
 router.get("/:id/show", asyncWrap(listingController.showListing));
 
 router.get("/:id/edit",isLoggedIn,isOwner, asyncWrap(listingController.editListing));
+
+
 
 module.exports=router;
