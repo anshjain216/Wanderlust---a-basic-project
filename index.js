@@ -62,14 +62,6 @@ app.use("/", Users);
 app.get("/", (req, res) => {
     res.send("hi i am root");
 })
-app.get("/demouser", async(req,res)=>{
-    let fakeuser = new User({
-        email:"student@gmail.com",
-        username:"student12345"
-    })
-    let registerduser = await User.register(fakeuser,"helloworld");
-    res.send(registerduser);
-})
 app.listen(8080, () => {
     console.log("server listning to port 8080");
 })

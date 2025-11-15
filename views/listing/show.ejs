@@ -1,5 +1,8 @@
 <% layout("/layout/boilerplate.ejs") %>
-
+<script>
+    const maptoken="<%=process.env.MAP_KEY%>";
+    const listing = <%- JSON.stringify(list) %>;
+</script>
     <body>
         <div class="row">
             <div class="col-8 offset-2">
@@ -34,8 +37,9 @@
                                             <% } %>
 
 
-                                                <hr>
+                                                
                                                 <% if(currUser) {%>
+                                                    <hr>
                                                     <div class="mt-3 mb-3">
                                                         <h4> Add a review</h4>
                                                         <form action="/listings/<%= list._id %>/reviews" method="post"
@@ -43,28 +47,28 @@
                                                             <div class="mt-3 mb-3">
                                                                 <label for="rating" class="form-label">Rating</label>
                                                                 <fieldset class="starability-slot">
-                                                                    
+
                                                                     <input type="radio" id="no-rate"
-                                                                        class="input-no-rate" name="review[rating]" value="1"
-                                                                        checked aria-label="No rating." />
-                                                                    <input type="radio" id="second-rate1" name="review[rating]"
-                                                                        value="1" />
+                                                                        class="input-no-rate" name="review[rating]"
+                                                                        value="1" checked aria-label="No rating." />
+                                                                    <input type="radio" id="second-rate1"
+                                                                        name="review[rating]" value="1" />
                                                                     <label for="second-rate1" title="Terrible">1
                                                                         star</label>
-                                                                    <input type="radio" id="second-rate2" name="review[rating]"
-                                                                        value="2" />
+                                                                    <input type="radio" id="second-rate2"
+                                                                        name="review[rating]" value="2" />
                                                                     <label for="second-rate2" title="Not good">2
                                                                         stars</label>
-                                                                    <input type="radio" id="second-rate3" name="review[rating]"
-                                                                        value="3" />
+                                                                    <input type="radio" id="second-rate3"
+                                                                        name="review[rating]" value="3" />
                                                                     <label for="second-rate3" title="Average">3
                                                                         stars</label>
-                                                                    <input type="radio" id="second-rate4" name="review[rating]"
-                                                                        value="4" />
+                                                                    <input type="radio" id="second-rate4"
+                                                                        name="review[rating]" value="4" />
                                                                     <label for="second-rate4" title="Very good">4
                                                                         stars</label>
-                                                                    <input type="radio" id="second-rate5" name="review[rating]"
-                                                                        value="5" />
+                                                                    <input type="radio" id="second-rate5"
+                                                                        name="review[rating]" value="5" />
                                                                     <label for="second-rate5" title="Amazing">5
                                                                         stars</label>
                                                                 </fieldset>
@@ -90,43 +94,53 @@
                     <br>
                     <hr>
                     <br>
-
-                    <h4><b>Reviews</b> </h4>
-
-
-                    <div class="row">
-                        <% for(let review of list.reviews){ %>
-                            <div class="card review-card col-5 ms-5 mb-3 mt-2">
-                                <div class="card-body mb-1">
-                                    <p class="card-text"><b>
-                                            @<%= review.author.username %>
-                                        </b>
-
-                                    </p>
-                                    <p class="starability-result card-text" data-rating="<%= review.rating %>">
-    Rated: 3 stars
-  </p>
-                                    <p class="card-text">
-                                        <%= review.comment %>
-                                    </p>
-                                    
-                                    
-  
-
-                                </div>
-
-                                <form action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=delete"
-                                    class="mb-3" method="post">
-                                    <button class="btn btn-dark">Delete</button>
-                                </form>
-                            </div>
-                            <% } %>
+                    <div>
+                        <b><p>Where you will be</p></b>
+                        
+                        <div id="map"></div>
                     </div>
+                    <br>
+                    <hr>
+                    <br>
+                    
+                    <% if(list.reviews && list.reviews.length>0){ %>
+                        <h4><b>Reviews</b> </h4>
+
+
+                        <div class="row">
+                            <% for(let review of list.reviews){ %>
+                                <div class="card review-card col-5 ms-5 mb-3 mt-2">
+                                    <div class="card-body mb-1">
+                                        <p class="card-text"><b>
+                                                @<%= review.author.username %>
+                                            </b>
+
+                                        </p>
+                                        <p class="starability-result card-text" data-rating="<%= review.rating %>">
+                                            Rated: 3 stars
+                                        </p>
+                                        <p class="card-text">
+                                            <%= review.comment %>
+                                        </p>
+
+
+
+
+                                    </div>
+
+                                    <form action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=delete"
+                                        class="mb-3" method="post">
+                                        <button class="btn btn-dark">Delete</button>
+                                    </form>
+                                </div>
+                                <% } %>
+                        </div>
+                        <% } %>
                 </div>
 
 
 
             </div>
         </div>
-
+<script src="/js/map.js"></script>
     </body>

@@ -1,23 +1,28 @@
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-.container{
+
+.container {
     flex: 1;
 }
-.navbar{
+
+.navbar {
     height: 5rem;
     background-color: white;
 }
-.fa-compass{
+
+.fa-compass {
     color: #fe424d;
     font-size: 2rem;
 }
-.nav-link{
+
+.nav-link {
     color: #222222 !important;
 }
+
 /* 
 .f-info-links a{
     text-decoration: none;
@@ -48,88 +53,118 @@ body {
     width: 100%;
     text-align: center;
 }  */
-  .f-info {
-  background-color: #ebebeb;
-  padding: 1rem; /* more flexible than fixed height */
-  display: flex;
-  flex-direction: column; /* stack items vertically */
-  align-items: center;
-  gap: 0.5rem; /* spacing between elements */
-  text-align: center;
+.f-info {
+    background-color: #ebebeb;
+    padding: 1rem;
+    /* more flexible than fixed height */
+    display: flex;
+    flex-direction: column;
+    /* stack items vertically */
+    align-items: center;
+    gap: 0.5rem;
+    /* spacing between elements */
+    text-align: center;
 }
 
 .f-info-social {
-  display: flex;
-  gap: 1rem; /* replaces margin-right */
-  justify-content: center;
+    display: flex;
+    gap: 1rem;
+    /* replaces margin-right */
+    justify-content: center;
 }
 
 .f-info-social i {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .f-info-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 .f-info-links a {
-  text-decoration: none;
-  color: #222;
+    text-decoration: none;
+    color: #222;
 }
 
 .f-info-links a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* cards */
 .card {
-  border: none !important;
+    border: none !important;
 }
-.card-img-top{
+
+.card-img-top {
     border-radius: 1rem !important;
     width: 100% !important;
     object-fit: cover !important;
 }
-.card-body{
+
+.card-body {
     padding: 0 !important;
 }
+
 .card-text {
     font-weight: 400 !important;
 }
-.listing-link{
+
+.listing-link {
     text-decoration: none;
 }
-.card-img-overlay{
+
+.card-img-overlay {
     opacity: 0;
 }
-.card-img-overlay:hover{
+
+.card-img-overlay:hover {
     opacity: 0.2;
     background-color: white;
 }
-.submit-btn{
+
+.submit-btn {
     background-color: #fe424d !important;
     border: none !important;
 }
 
 /* show page */
-.show-img{
+.show-img {
     height: 30vh !important;
     object-fit: cover !important;
 }
-.show-btn{
+
+.show-btn {
     display: flex;
     gap: 2rem;
 }
-.edit-btn{
-     background-color: #fe424d !important;
+
+.edit-btn {
+    background-color: #fe424d !important;
     border: none !important;
     width: 6rem !important;
 }
-.review-card{
+
+.review-card {
     border: #222 !important;
 }
+
 .card.review-card {
-  border: 1px solid black !important;  /* This will override the global "border: none !important" */
+    border: 1px solid black !important;
+    /* This will override the global "border: none !important" */
+}
+
+/* public/css/style.css */
+.edit-img {
+    width: 250px;
+    object-fit: cover;
+    /* crop but keep aspect ratio */
+    border-radius: 4px;
+    /* optional */
+}
+
+#map {
+ height: 400px;
+ width: 80vh;
 }

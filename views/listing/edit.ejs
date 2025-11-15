@@ -6,7 +6,7 @@
         <br>
         <div class="row">
             <div class="col-8 offset-2">
-                <form action="/listings/<%= data._id%>?_method=put" method="post" novalidate class="needs-validation">
+                <form action="/listings/<%= data._id%>?_method=put" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" name="listing[title]" id="" value="<%= data.title %>" class="form-control"
@@ -23,12 +23,16 @@
                             Please enter a description.
                         </div>
                     </div>
+                    
                     <div class="mb-3">
+                        <div>
+                            original image: <br>
+                            <img src="<%= originalimg %>" class="edit-img" alt="">
+                        </div>
                         <label for="image" class="form-label">Image url</label>
-                        <input type="text" name="listing[image]" id="" value="<%= data.image %>" class="form-control"
-                            required>
+                        <input type="file" name="listing[image]" id="" class="form-control">
                         <div class="invalid-feedback">
-                            Please enter a image url.
+                            Please upload an image.
                         </div>
                     </div>
                     <div class="row">
@@ -66,6 +70,7 @@
 
                     <button class="btn btn-dark submit-btn"> submit </button>
                 </form>
+                <br><br>
             </div>
         </div>
     </body>
