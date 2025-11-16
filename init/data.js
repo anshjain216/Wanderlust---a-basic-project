@@ -13,7 +13,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-118.7798, 34.0259]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Modern Loft in Downtown",
@@ -29,7 +30,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-74.0060, 40.7128]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Mountain Retreat",
@@ -45,7 +47,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-106.8175, 39.1911]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Historic Villa in Tuscany",
@@ -61,7 +64,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [11.2558, 43.7696]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Secluded Treehouse Getaway",
@@ -77,7 +81,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-122.6784, 45.5152]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Beachfront Paradise",
@@ -93,7 +98,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-86.8515, 21.1619]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Rustic Cabin by the Lake",
@@ -109,7 +115,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-119.9772, 38.9399]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Luxury Penthouse with City Views",
@@ -125,7 +132,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-118.2437, 34.0522]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Ski-In/Ski-Out Chalet",
@@ -141,7 +149,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [7.2285, 46.0961]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Safari Lodge in the Serengeti",
@@ -157,7 +166,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [34.8333, -2.3333]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Charming Bungalow in Bali",
@@ -173,7 +183,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [115.2625, -8.5069]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Countryside Farmhouse",
@@ -189,7 +200,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-86.7816, 36.1627]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Desert Glamping Dome",
@@ -205,7 +217,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-116.3131, 34.1347]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Romantic Parisian Apartment",
@@ -221,7 +234,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [2.3522, 48.8566]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Jungle Eco-Lodge",
@@ -236,8 +250,9 @@ const sampleListings = [
     categories: ["Camping", "Farms", "Homes"],
     geometry: {
       type: "Point",
-      coordinates: [-60.0217, -3.1190] // near Manaus
-    }
+      coordinates: [-60.0217, -3.1190]
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Greek Island Villa",
@@ -253,7 +268,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [25.4615, 36.3932]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Icelandic Cabin with Northern Lights",
@@ -269,7 +285,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-21.9426, 64.1466]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Japanese Ryokan with Onsen",
@@ -285,7 +302,8 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [135.7681, 35.0116]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "Dubai Luxury Sky Villa",
@@ -301,13 +319,14 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [55.2708, 25.2048]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
     title: "London City Flat",
     description: "Modern flat located near central London with access to shopping, dining, and culture.",
     image: {
-      url: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
       filename: "listingimage_20"
     },
     price: 2400,
@@ -317,136 +336,146 @@ const sampleListings = [
     geometry: {
       type: "Point",
       coordinates: [-0.1278, 51.5074]
-    }
+    },
+    owner: "6919b49ecc4063613ac3117e"
   },
   {
-    title: "Sydney Harbour Apartment",
-    description: "Enjoy breathtaking views of the Sydney Opera House and Harbour Bridge from this apartment.",
-    image: {
-      url: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      filename: "listingimage_21"
-    },
-    price: 2600,
-    location: "Sydney",
-    country: "Australia",
-    categories: ["Beach", "Apartments"],
-    geometry: {
-      type: "Point",
-      coordinates: [151.2093, -33.8688]
-    }
+  title: "Sydney Harbour Apartment",
+  description: "Enjoy breathtaking views of the Sydney Opera House and Harbour Bridge from this apartment.",
+  image: {
+    url: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    filename: "listingimage_21"
   },
-  {
-    title: "Moroccan Riad",
-    description: "Immerse yourself in Moroccan culture with a stay in this colorful and vibrant riad.",
-    image: {
-      url: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      filename: "listingimage_22"
-    },
-    price: 1700,
-    location: "Marrakech",
-    country: "Morocco",
-    categories: ["Iconic Cities", "Castles", "Homes"],
-    geometry: {
-      type: "Point",
-      coordinates: [-7.9811, 31.6295]
-    }
+  price: 2600,
+  location: "Sydney",
+  country: "Australia",
+  categories: ["Beach", "Apartments"],
+  geometry: {
+    type: "Point",
+    coordinates: [151.2093, -33.8688]
   },
-  {
-    title: "Canadian Log Cabin",
-    description: "Cozy log cabin surrounded by snowy mountains and pine trees. A winter wonderland getaway.",
-    image: {
-      url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      filename: "listingimage_23"
-    },
-    price: 1600,
-    location: "Banff",
-    country: "Canada",
-    categories: ["Mountains", "Arctic", "Homes"],
-    geometry: {
-      type: "Point",
-      coordinates: [-115.5708, 51.1784]
-    }
+  owner: "6919b49ecc4063613ac3117e"
+},
+{
+  title: "Moroccan Riad",
+  description: "Immerse yourself in Moroccan culture with a stay in this colorful and vibrant riad.",
+  image: {
+    url: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    filename: "listingimage_22"
   },
-  {
-    title: "Barcelona City Loft",
-    description: "Trendy loft in Barcelona’s Gothic Quarter, close to tapas bars, markets, and historic sites.",
-    image: {
-      url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      filename: "listingimage_24"
-    },
-    price: 1900,
-    location: "Barcelona",
-    country: "Spain",
-    categories: ["Iconic Cities", "Apartments", "Beach"],
-    geometry: {
-      type: "Point",
-      coordinates: [2.1734, 41.3851]
-    }
+  price: 1700,
+  location: "Marrakech",
+  country: "Morocco",
+  categories: ["Iconic Cities", "Castles", "Homes"],
+  geometry: {
+    type: "Point",
+    coordinates: [-7.9811, 31.6295]
   },
-  {
-    title: "Cape Town Ocean View Villa",
-    description: "Luxurious villa with panoramic views of Table Mountain and the Atlantic Ocean.",
-    image: {
-      url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      filename: "listingimage_25"
-    },
-    price: 2800,
-    location: "Cape Town",
-    country: "South Africa",
-    categories: ["Beach", "Homes", "Pools"],
-    geometry: {
-      type: "Point",
-      coordinates: [18.4241, -33.9249]
-    }
+  owner: "6919b49ecc4063613ac3117e"
+},
+{
+  title: "Canadian Log Cabin",
+  description: "Cozy log cabin surrounded by snowy mountains and pine trees. A winter wonderland getaway.",
+  image: {
+    url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    filename: "listingimage_23"
   },
-  {
-    title: "Amsterdam Canal House",
-    description: "Stay in a classic Dutch canal house with modern interiors and stunning waterfront views.",
-    image: {
-      url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      filename: "listingimage_26"
-    },
-    price: 2000,
-    location: "Amsterdam",
-    country: "Netherlands",
-    categories: ["Iconic Cities", "Homes"],
-    geometry: {
-      type: "Point",
-      coordinates: [4.9041, 52.3676]
-    }
+  price: 1600,
+  location: "Banff",
+  country: "Canada",
+  categories: ["Mountains", "Arctic", "Homes"],
+  geometry: {
+    type: "Point",
+    coordinates: [-115.5708, 51.1784]
   },
-  {
-    title: "Vienna Palace Apartment",
-    description: "Elegant apartment with vintage charm, located in the cultural heart of Vienna.",
-    image: {
-      url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      filename: "listingimage_27"
-    },
-    price: 2300,
-    location: "Vienna",
-    country: "Austria",
-    categories: ["Iconic Cities", "Apartments", "Castles"],
-    geometry: {
-      type: "Point",
-      coordinates: [16.3738, 48.2082]
-    }
+  owner: "6919b49ecc4063613ac3117e"
+},
+{
+  title: "Barcelona City Loft",
+  description: "Trendy loft in Barcelona’s Gothic Quarter, close to tapas bars, markets, and historic sites.",
+  image: {
+    url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    filename: "listingimage_24"
   },
-  {
-    title: "Singapore Marina Bay Condo",
-    description: "Modern condo with futuristic design, overlooking Marina Bay Sands.",
-    image: {
-      url: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      filename: "listingimage_28"
-    },
-    price: 3200,
-    location: "Singapore",
-    country: "Singapore",
-    categories: ["Iconic Cities", "Apartments", "Pools", "Trending"],
-    geometry: {
-      type: "Point",
-      coordinates: [103.8198, 1.3521]
-    }
-  }
+  price: 1900,
+  location: "Barcelona",
+  country: "Spain",
+  categories: ["Iconic Cities", "Apartments", "Beach"],
+  geometry: {
+    type: "Point",
+    coordinates: [2.1734, 41.3851]
+  },
+  owner: "6919b49ecc4063613ac3117e"
+},
+{
+  title: "Cape Town Ocean View Villa",
+  description: "Luxurious villa with panoramic views of Table Mountain and the Atlantic Ocean.",
+  image: {
+    url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    filename: "listingimage_25"
+  },
+  price: 2800,
+  location: "Cape Town",
+  country: "South Africa",
+  categories: ["Beach", "Homes", "Pools"],
+  geometry: {
+    type: "Point",
+    coordinates: [18.4241, -33.9249]
+  },
+  owner: "6919b49ecc4063613ac3117e"
+},
+{
+  title: "Amsterdam Canal House",
+  description: "Stay in a classic Dutch canal house with modern interiors and stunning waterfront views.",
+  image: {
+    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    filename: "listingimage_26"
+  },
+  price: 2000,
+  location: "Amsterdam",
+  country: "Netherlands",
+  categories: ["Iconic Cities", "Homes"],
+  geometry: {
+    type: "Point",
+    coordinates: [4.9041, 52.3676]
+  },
+  owner: "6919b49ecc4063613ac3117e"
+},
+{
+  title: "Vienna Palace Apartment",
+  description: "Elegant apartment with vintage charm, located in the cultural heart of Vienna.",
+  image: {
+    url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    filename: "listingimage_27"
+  },
+  price: 2300,
+  location: "Vienna",
+  country: "Austria",
+  categories: ["Iconic Cities", "Apartments", "Castles"],
+  geometry: {
+    type: "Point",
+    coordinates: [16.3738, 48.2082]
+  },
+  owner: "6919b49ecc4063613ac3117e"
+},
+{
+  title: "Singapore Marina Bay Condo",
+  description: "Modern condo with futuristic design, overlooking Marina Bay Sands.",
+  image: {
+    url: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    filename: "listingimage_28"
+  },
+  price: 3200,
+  location: "Singapore",
+  country: "Singapore",
+  categories: ["Iconic Cities", "Apartments", "Pools", "Trending"],
+  geometry: {
+    type: "Point",
+    coordinates: [103.8198, 1.3521]
+  },
+  owner: "6919b49ecc4063613ac3117e"
+}
+
 ];
 
 module.exports = { data: sampleListings };
