@@ -7,16 +7,17 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.allListing=async (req, res) => {
     let alllisting = await listing.find({});
-    let cat= undefined;
-    res.render("listing/index.ejs", { alllisting,cat });
+    let cat,search= undefined;
+    res.render("listing/index.ejs", { alllisting,cat ,search});
 }
 
 module.exports.categoryListing= async(req,res)=>{
     let {cat}= req.query;
     let alllisting 
+    let search = undefined
     if(!cat){
          alllisting = await listing.find({});
-     return res.render("listing/index.ejs", { alllisting,cat });
+     return res.render("listing/index.ejs", { alllisting,cat ,search});
     }
     
      alllisting = await listing.find({categories:cat});
@@ -90,4 +91,29 @@ module.exports.deleteListing=async (req, res) => {
     await listing.findByIdAndDelete(id);
     req.flash("success","Listing deleted");
     res.redirect("/listings");
+}
+
+module.exports.searchfun=async(req,res)=>{
+    let {searchParameter}= req.query;
+    let q = searchParameter?.trim();
+    
+    if(q){
+        const orConditions = [
+  { title: { $regex: q, $options: "i" } },
+  { location: { $regex: q, $options: "i" } },
+  { country: { $regex: q, $options: "i" } },
+];
+    
+    let qn = Number(q);
+    if(!Number.isNaN(qn)){
+        orConditions.push({price:qn});
+    }
+    let query = {$or:orConditions};
+    let alllisting = await listing.find(query);
+    if(alllisting){
+         let cat= undefined;
+         let search = true;
+    res.render("listing/index.ejs", { alllisting,cat,search });
+    }
+}
 }

@@ -48,9 +48,12 @@
             .gst{
                 display: none;
             }
+            .pricetag{
+                display: inline;
+            }
         </style>
         
-        <% if(typeof cat == "undefined"){ %>
+        <% if(typeof cat == "undefined" && typeof search=="undefined"){ %>
             <br>
        <div class="filters">
 
@@ -143,6 +146,9 @@
             <h3>List from category <%= cat %> :</h3>
             <br>
             <% } %>
+            <% if(typeof search != "undefined"){ %>
+                <p><b>Here are your search results : </b></p>
+                <% } %>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
             <% for(let list of alllisting){%>
                 <a href="/listings/<%= list._id %>/show" class="listing-link">
@@ -155,8 +161,12 @@
                                     <%= list.title %>
                                 </b>
                                 <br>
-                                &#8377;<%= list.price.toLocaleString("en-IN") %> / night
-                                <i class="gst">&nbsp;  +   18% GST</i>
+                                <span class="pricetag">&#8377;<%= list.price.toLocaleString("en-IN") %> / night</span>
+                                <span class="gst">
+                                    &#8377;<%=((list.price*18/100)+list.price).toLocaleString("en-IN") %> / night
+                                    <i class="gst">&nbsp;  (+18% GST)</i>
+                                </span>
+                                
                             </p>
                         </div>
                     </div>
@@ -168,19 +178,35 @@
 <script>
     let taxswitch = document.getElementById("flexSwitchCheckDefault");
 
-    taxswitch.addEventListener("click", () => {
-        let taxinfo = document.getElementsByClassName("gst");
+    // Only attach listener if the switch exists
+    if (taxswitch) {
+        taxswitch.addEventListener("click", () => {
+            let taxinfo = document.getElementsByClassName("gst");
+            let prices = document.getElementsByClassName("pricetag");
 
-        for (let tax of taxinfo) {
+            // Check current state using first element (if exists)
+            const showingGST = taxinfo.length > 0 && taxinfo[0].style.display === "inline";
 
-            if (tax.style.display !== "inline") {
-                tax.style.display = "inline";  
+            if (!showingGST) {
+                // Show GST prices, hide base prices
+                for (let tax of taxinfo) {
+                    tax.style.display = "inline";
+                }
+                for (let p of prices) {
+                    p.style.display = "none";
+                }
             } else {
-                tax.style.display = "none";     
+                // Hide GST prices, show base prices
+                for (let tax of taxinfo) {
+                    tax.style.display = "none";
+                }
+                for (let p of prices) {
+                    p.style.display = "inline";
+                }
             }
-
-        }
-    });
+        });
+    }
 </script>
+
 
     </body>
