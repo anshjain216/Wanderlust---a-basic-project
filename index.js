@@ -80,6 +80,9 @@ app.listen(8080, () => {
     console.log("server listning to port 8080");
 })
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 app.use((err, req, res, next) => {
     let { status = 500, message = "something went wrong" } = err;
